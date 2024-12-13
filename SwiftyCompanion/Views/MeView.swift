@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MeView: View {
     
-    @EnvironmentObject var viewModel: UserViewModel
+    @Environment(UserViewModel.self) var viewModel
     
     var body: some View {
         ZStack {
             BackgroundView()
             ScrollView {
-                IDView(user: viewModel.user)
+                IDView(user: viewModel.currentUser)
             }
         }
     }
@@ -23,5 +23,5 @@ struct MeView: View {
 
 #Preview {
     MeView()
-        .environmentObject(UserViewModel())
+        .environment(UserViewModel())
 }

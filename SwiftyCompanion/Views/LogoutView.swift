@@ -9,10 +9,10 @@ import SwiftUI
 
 struct LogoutView: View {
     
-    @EnvironmentObject var viewModel: UserViewModel
+    @Environment(UserViewModel.self) var viewModel
     
     var userName: AttributedString {
-        var result = " " + AttributedString(viewModel.user?.login ?? "Frodo") + " "
+        var result = " " + AttributedString(viewModel.currentUser?.login ?? "Frodo") + " "
         result.backgroundColor = .customWhite
         return result
     }
@@ -53,5 +53,5 @@ struct LogoutView: View {
 
 #Preview {
     LogoutView()
-        .environmentObject(UserViewModel())
+        .environment(UserViewModel())
 }

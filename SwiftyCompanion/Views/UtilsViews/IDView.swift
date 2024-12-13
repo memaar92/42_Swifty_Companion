@@ -10,7 +10,7 @@ import SwiftUI
 struct IDView: View {
     
     let user: FortyTwoUser?
-    @State var isShowingDetailView = false
+    @State private var isShowingDetailView = false
     
     var body: some View {
         ZStack {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PeerIDView: View {
     
-    @StateObject private var viewModel = UserViewModel()
+    @State private var viewModel = UserViewModel()
     @State private var showingAlert = false
     @State private var selectedAlert: AlertItem?
     @Binding var navPath: NavigationPath
@@ -20,7 +20,7 @@ struct PeerIDView: View {
             BackgroundView()
             ScrollView {
                 VStack {
-                    IDView(user: viewModel.user)
+                    IDView(user: viewModel.currentUser)
                         .padding(.top, -20)
                 }
                 .onAppear {

@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-@MainActor
-class FindPeersViewModel: ObservableObject {
+@Observable @MainActor
+class FindPeersViewModel {
     
     let networkManager = NetworkManager()
     
-    @Published var searchMode = false
-    @Published var searchTerm: String = ""
-    @Published var activeFilter = false
+    var searchMode = false
+    var searchTerm: String = ""
+    var activeFilter = false
     var test: String = ""
     
-    @Published var peers: [Peer] = []
+    var peers: [Peer] = []
     private var currentPage = 1
     private var canLoadMorePages = true
     
-    @Published var peersSearch: [Peer] = []
+    var peersSearch: [Peer] = []
     var searchTermSubmitted: String = ""
     private var currentPageSearch = 1
     private var canLoadMorePagesSearch = true

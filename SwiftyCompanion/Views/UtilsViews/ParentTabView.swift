@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ParentTabView: View {
     
-    @StateObject var userViewModel = UserViewModel()
+    @State var userViewModel = UserViewModel()
     @State private var showingAlert = false
     @State private var selectedAlert: AlertItem?
     
@@ -30,7 +30,7 @@ struct ParentTabView: View {
                 }
         }
         .accentColor(.PB)
-        .environmentObject(userViewModel)
+        .environment(userViewModel)
         .task {
             await fetchUserData()
         }

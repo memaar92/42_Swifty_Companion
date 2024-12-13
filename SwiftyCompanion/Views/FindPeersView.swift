@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FindPeersView: View {
     
-    @StateObject private var viewModel = FindPeersViewModel()
+    @State private var viewModel = FindPeersViewModel()
     @State private var navPath = NavigationPath()
     @State private var showingAlert = false
     @State private var selectedAlert: AlertItem?

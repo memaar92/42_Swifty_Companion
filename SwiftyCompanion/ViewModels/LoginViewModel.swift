@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
+@Observable @MainActor
+class LoginViewModel {
     
     var url42Auth: URL {
         let clientID = ProcessInfo.processInfo.environment["clientID"] ?? ""

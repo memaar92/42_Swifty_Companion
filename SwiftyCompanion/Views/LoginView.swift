@@ -11,7 +11,7 @@ import AuthenticationServices
 struct LoginView: View {
     
     @Environment(\.webAuthenticationSession) private var webAuthenticationSession
-    @StateObject private var viewModel = LoginViewModel()
+    @State private var viewModel = LoginViewModel()
     @State private var showingAlert = false
     @State private var selectedAlert: AlertItem?
     
