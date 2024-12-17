@@ -4,7 +4,7 @@ Swifty Companion is part of the 42 advanced curriculum and designed to explore t
 
 ## Implemented features include:
 - Sign in with 42
-- Authentication Management using the Actor protocol & keychain storage of access token
+- Authentication Management using the actor type & keychain storage of access token
 - Profile View
 - Detail View showcasing projects and skills
 - List and search for peers (with infinite scroll and option to filter for active peers)

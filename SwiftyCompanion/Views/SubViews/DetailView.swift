@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @State private var viewModel = DetailViewModel()
+    var viewModel = DetailViewModel()
     @State private var currentSegment = "Projects"
     let user: FortyTwoUser?
     

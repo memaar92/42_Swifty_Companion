@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-@Observable @MainActor
-class LoginViewModel {
+
+struct LoginViewModel {
     
-    var url42Auth: URL {
+     var url42Auth: URL {
         let clientID = ProcessInfo.processInfo.environment["clientID"] ?? ""
         let url = "https://api.intra.42.fr/oauth/authorize?client_id=" + clientID + "&redirect_uri=swiftyapp%3A%2F%2Foauth-callback&response_type=code"
         return URL(string: url)!

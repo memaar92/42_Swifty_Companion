@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2BDB9782D0F60D10014575A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C2BDB9772D0F60D10014575A /* README.md */; };
 		C2C8D4D32D020D7B0012C351 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2C8D4D22D020D710012C351 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C2AA70A22CF2714A00E934D5 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AA70B22CF2714B00E934D5 /* SwiftyCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AA70BC2CF2714B00E934D5 /* SwiftyCompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCompanionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2BDB9772D0F60D10014575A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C2C8D4D22D020D710012C351 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		C2AA70992CF2714A00E934D5 = {
 			isa = PBXGroup;
 			children = (
+				C2BDB9772D0F60D10014575A /* README.md */,
 				C2C8D4D22D020D710012C351 /* .gitignore */,
 				C2AA70A42CF2714A00E934D5 /* SwiftyCompanion */,
 				C2AA70B52CF2714B00E934D5 /* SwiftyCompanionTests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2BDB9782D0F60D10014575A /* README.md in Resources */,
 				C2C8D4D32D020D7B0012C351 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

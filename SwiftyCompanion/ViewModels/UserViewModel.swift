@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable @MainActor
-class UserViewModel {
+final class UserViewModel {
     
     let networkManager = NetworkManager()
     var currentUser: FortyTwoUser?

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable @MainActor
-class FindPeersViewModel {
+final class FindPeersViewModel {
     
     let networkManager = NetworkManager()
     
@@ -26,7 +26,6 @@ class FindPeersViewModel {
     private var currentPageSearch = 1
     private var canLoadMorePagesSearch = true
     
-    @MainActor
     var filteredPeers: [Peer] {
         if searchTermSubmitted != searchTerm && !peersSearch.isEmpty {
             Task {

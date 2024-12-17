@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-@Observable
-class DetailViewModel {
+final class DetailViewModel {
     var segmentTitles: [String] = ["Projects", "Skills"]
     
 }

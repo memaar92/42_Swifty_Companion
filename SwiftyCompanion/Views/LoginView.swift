@@ -11,7 +11,7 @@ import AuthenticationServices
 struct LoginView: View {
     
     @Environment(\.webAuthenticationSession) private var webAuthenticationSession
-    @State private var viewModel = LoginViewModel()
+    let viewModel = LoginViewModel()
     @State private var showingAlert = false
     @State private var selectedAlert: AlertItem?
     
@@ -57,8 +57,6 @@ struct LoginView: View {
             showingAlert = true
         }
     }
-    
-    
 }
 
 
