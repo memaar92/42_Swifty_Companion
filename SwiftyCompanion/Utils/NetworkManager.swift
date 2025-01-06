@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct NetworkManager {
+
+struct NetworkManager: NetworkManagerProtocol {
 
     func makeAuthorizedGetRequest<T: Decodable>(url: URL) async throws -> (T, HTTPURLResponse) {
         let request = try await createAuthorizedGetRequest(from: url)

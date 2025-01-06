@@ -7,10 +7,14 @@
 
 import SwiftUI
 
+protocol NetworkManagerProtocol: Sendable {
+    func makeAuthorizedGetRequest<T: Decodable>(url: URL) async throws -> (T, HTTPURLResponse)
+}
+
 @Observable @MainActor
 final class FindPeersViewModel {
     
-    let networkManager = NetworkManager()
+    let networkManager: any NetworkManagerProtocol
     
     var searchMode = false
     var searchTerm: String = ""
@@ -19,7 +23,7 @@ final class FindPeersViewModel {
     
     var peers: [Peer] = []
     private var currentPage = 1
-    private var canLoadMorePages = true
+    private(set) var canLoadMorePages = true
     
     var peersSearch: [Peer] = []
     var searchTermSubmitted: String = ""
@@ -47,15 +51,14 @@ final class FindPeersViewModel {
         return peersSearch
     }
     
-    // if moved to View then this only gets loaded when accessing the tab, else it already gets loaded when ParentTabView is accessed
-    init() {
-        Task {
-            try await loadMoreContent()
-        }
+    init(networkManager: any NetworkManagerProtocol) {
+        // if moved to View then this only gets loaded when accessing the tab, else it already gets loaded when ParentTabView is accessed
+        self.networkManager = networkManager
+        Task { try await loadMoreContent() }
     }
     
     func loadMoreContentIfNeeded(currentPeer: Peer?) async throws {
-        guard let currentPeer = currentPeer else {
+        guard let currentPeer else {
             try await loadMoreContent()
             return
         }

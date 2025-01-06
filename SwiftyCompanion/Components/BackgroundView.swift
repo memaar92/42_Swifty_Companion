@@ -12,10 +12,7 @@ struct BackgroundView: View {
         VStack{
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background {
-            Color .BG
-                .ignoresSafeArea()
-        }
+        .background(Color.BG)
     }
 }
 
