@@ -10,13 +10,13 @@ import SwiftUI
 @testable import SwiftyCompanion
 
 struct SwiftyCompanionTests {
-
+    
     @Test("Check if more peers can be loaded", arguments: [
         ("1", 1, false),
         ("2", 1, false), // this is should be false because getPeers() gets additionally called once FindPeersViewModel is initialized
         ("2", 2, false),
         ("3", 1, true),
-        ("10", 5, true)
+        ("10", 5, true) 
     ])  func canLoadMorePagesTest(xTotal: String, numCalls: Int, result: Bool) async throws {
         var mockNetworkManager = MockNetworkManager()
         let mockPeers: [Peer] = [Peer(id: 1, login: "username", kind: "student", active: true)]
@@ -31,6 +31,21 @@ struct SwiftyCompanionTests {
         }
         await #expect(viewModel.canLoadMorePages == result)
     }
+    
+    @Test("Networking Error") func networkingErrorTest() async throws {
+        var mockNetworkManager = MockNetworkManager()
+        let mockPeers: [Peer] = [Peer(id: 1, login: "username", kind: "student", active: true)]
+        mockNetworkManager.mockResponse = (mockPeers, HTTPURLResponse(url: URL(string: "https://test.test")!,
+                                                                      statusCode: 200,
+                                                                      httpVersion: nil,
+                                                                      headerFields: ["X-Total": "3"])!)
+        mockNetworkManager.errorToThrow = NetworkError.noResponse
+        let viewModel = await FindPeersViewModel(networkManager: mockNetworkManager)
+        await #expect(throws: (any Error).self) {
+            try await viewModel.getPeers()
+        }
+    }
+    
 
 }
 
